@@ -3,15 +3,61 @@
     <link href="styles/libraries/bootstrap.min.css" rel="stylesheet">
     <link href="styles/libraries/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link href="styles/libraries/angular-material.min.css" rel="stylesheet">
+    <link href="styles/style.less" rel="stylesheet/less">
   </head>
-  <body ng-app="atomApp">
+  <body ng-app="atomApp" ng-controller="atomCtrl">
+    <md-toolbar ng-show="!showSearch">
+      <div class="md-toolbar-tools">
+        <img class="header-logo" ng-src="images/Atom_icon.png" alt="Brand"/>
+        <span flex></span>
+        <md-button aria-label="Search" ng-click="showSearch = !showSearch">
+            <ng-md-icon icon="search"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-toolbar class="md-hue-1" ng-show="showSearch">
+      <div class="md-toolbar-tools">
+        <md-button ng-click="showSearch = !showSearch" aria-label="Back">
+            <ng-md-icon icon="arrow_back"></ng-md-icon>
+          </md-button>
+          <h3 flex="10">
+            Back
+          </h3>
+        <md-input-container md-theme="input" flex>
+          <label>&nbsp;</label>
+          <input ng-model="search.who" placeholder="enter search">
+        </md-input-container>
+        <md-button aria-label="Search" ng-click="showSearch = !showSearch">
+          <ng-md-icon icon="search"></ng-md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <div class="row">
+      <div class="container">
+        <div class="list-wrapper mod-add is-idle" ng-hide="activeList" ng-click="activeList=true">
+          <div>
+            <span class="placeholder">Add a list...</span>
+          </div>
+        </div>
+        <div class="list-wrapper mod-add" ng-show="activeList">
+          <form role="form">
+            <input type="text" class="form-control" placeholder="Add a list..." autofocus ng-model="listName"/>
+            <button class="btn btn-primary mt10 mr5" ng-click="createList(listName)">Save</button>
+            <span class="fa fa-times fa-2x close-list" ng-click="activeList=false"></span>
+          </form>
+        </div>
+      </div>
+    </div>
     <script src="scripts/libraries/angular.min.js"></script>
     <script src="scripts/libraries/angular-animate.min.js"></script>
     <script src="scripts/libraries/angular-aria.min.js"></script>
     <script src="scripts/libraries/angular-material.min.js"></script>
+    <script src="scripts/libraries/angular-material-icons.min.js"></script>
     <script src="scripts/libraries/jquery-2.1.4.min.js"></script>
     <script src="scripts/libraries/ui-bootstrap-tpls-0.14.2.js"></script>
     <script src="scripts/libraries/less.min.js"></script>
     <script src="scripts/app.js"></script>
+    <script src="scripts/services/atom-service.js"></script>
+    <script src="scripts/controllers/atom-controller.js"></script>
   </body>
 </html>
