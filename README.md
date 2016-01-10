@@ -9,10 +9,10 @@ Functionalities implemented in the task management app
 	Delete the card/tasks by clicking on cross
 	Search for the card/task
 	Click on the card/task for detailed description
-  Update list name by clicking on the list name
-  Update card/task value by clicking on the value
-  Update description of the card/task
-  Tooltips added
+  	Update list name by clicking on the list name
+  	Update card/task value by clicking on the value
+  	Update description of the card/task
+  	Tooltips added
 
 Instructions to run the project
 
