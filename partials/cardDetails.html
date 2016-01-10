@@ -1,0 +1,18 @@
+<div class="modal-body">
+  <span uib-tooltip="Close" class="fa fa-times fa-lg close-modal" ng-click="cancel()"></span>
+  <div class="card-content">
+    <span class="fa fa-tasks fa-lg glyphs"></span>
+    <div class="card-val">
+      <edit-in-place uib-tooltip="Click to edit card" value="cardDetails.cardValue" key="cardDetails.listKey" card=true card-key="cardDetails.cardKey" item-click="updateCardValue(cardValue, listKey, cardKey)"></edit-in-place>
+      <p>in list</p>
+      <span class="list-name" ng-bind="cardDetails.listName"></span>
+    </div>
+    <div class="card-description mt10 mb10">
+      <i class="fa fa-bars"></i>
+      <span>Card Description<span>
+    </div>
+    <div class="card-desc">
+      <edit-in-place uib-tooltip="Click to edit card description" value="cardDetails.cardDescription" key="cardDetails.listKey" card=true card-key="cardDetails.cardKey" item-click="updateCardDescription(cardValue, listKey, cardKey)"></edit-in-place>
+    </div>
+  </div>
+</div>

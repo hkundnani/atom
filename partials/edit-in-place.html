@@ -1,0 +1,6 @@
+<span ng-click="edit()" ng-bind="value"></span>
+<input ng-model="$parent.value" class="form-control" ng-if="list" ng-required ng-trim="true"></input>
+<a class="btn btn-primary mt10 mr5" ng-click="itemClick({listName: value, listKey: key}); close();" ng-if="list && value">Save</a>
+<textarea msd-elastic class="form-control" ng-model="$parent.value" ng-if="card" ng-required ng-trim="true"></textarea>
+<a class="btn btn-primary mt10 mr5" ng-click="itemClick({cardValue: value, listKey: key, cardKey: cardKey}); close();" ng-if="card && value">Save</a>
+<i uib-tooltip="Close" class="fa fa-times fa-2x close-list" ng-click="close()"></ing-show

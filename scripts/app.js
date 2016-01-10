@@ -1,6 +1,6 @@
-angular.module('atomApp', ['ngMaterial', 'ngMdIcons'])
-  .config(function($mdThemingProvider) {
-    $mdThemingProvider
-      .theme('input', 'default')
-      .primaryPalette('grey')
+angular.module('atomApp', ['monospaced.elastic', 'ngAnimate', 'ui.bootstrap'])
+  .run(function($rootScope, $templateCache) {
+    $rootScope.$on('$viewContentLoaded', function() {
+      $templateCache.removeAll();
+    });
   });
