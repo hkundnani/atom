@@ -18,6 +18,7 @@ Instructions to run the project
 
     Extract the zip folder
     Make sure you are connected to internet
-    **Load the project on a local server. If node is installed then you can run node server. Do not run project without local server as chrome will give CORS error while trying to load css file which is generated through less compiler, No css will load if you run project without local server.
+    **Load the project on a local http server. If node is installed then you can run http server using node command 'http-server'.
+    **Do not run project without local http server as chrome will give CORS error while trying to load css file which is generated through less compiler, No css will load if you run project without local http server.
     Screenshots to run project on local server are added.
     Once you have run the local server, open the index file on browser.
