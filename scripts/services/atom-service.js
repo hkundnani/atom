@@ -37,11 +37,24 @@ angular.module('atomApp')
       _this.listArray = [];
       if(localStorage.length > 0) {
         angular.forEach(localStorage, function(list) {
-          unsortedArray.push(JSON.parse(list));
+          if (_this.isJSON(list) && JSON.parse(list) !== null) {
+            unsortedArray.push(JSON.parse(list));
+          }
         });
+
         _this.listArray = _.sortBy(unsortedArray, 'timeStamp');
         return this.listArray;
       }
+    },
+
+    isJSON: function(list) {
+      var flag = true;
+      try {
+        JSON.parse(list);
+      }catch(e) {
+        flag = false;
+      }
+      return flag;
     },
 
     saveCard: function(cardValue, listKey) {
